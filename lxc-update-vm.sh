@@ -11,12 +11,13 @@ vms="$(lxc-ls)"
 update_vm(){
         local vm="$1"
         echo "*** [VM: $vm [$(hostname) @ $(date)] ] ***"
-        /usr/bin/lxc-attach -n "$vm" apt-get -- -qq update
-        /usr/bin/lxc-attach -n "$vm" apt-get -- -qq -y upgrade
-        /usr/bin/lxc-attach -n "$vm" apt-get -- -qq -y clean
-        /usr/bin/lxc-attach -n "$vm" apt-get -- -qq -y autoclean
-        # Note for RHEL/CentOS/Fedora Linux comment above two line and uncomment the following line #
-        # lxc-attach -n "$vm" yum -y update
+        # Note for Ubuntu Linux uncomment the 4 lines below 
+        #/usr/bin/lxc-attach -n "$vm" apt-get -- -qq update
+        #/usr/bin/lxc-attach -n "$vm" apt-get -- -qq -y upgrade
+        #/usr/bin/lxc-attach -n "$vm" apt-get -- -qq -y clean
+        #/usr/bin/lxc-attach -n "$vm" apt-get -- -qq -y autoclean
+        # Note for RHEL / CentOS / Fedora uncomment the 1 line below
+        lxc-attach -n "$vm" yum -y update
         echo "-----------------------------------------------------------------"
 }
  
