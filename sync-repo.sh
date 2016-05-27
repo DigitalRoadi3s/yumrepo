@@ -9,7 +9,7 @@ mirror="mirrors.kernel.org/centos"
 #mirror="rsync.gtlib.gatech.edu/centos"
 #mirror="mirror.umoss.org/centos"
 
-verlist="5 6 7"
+verlist="6 7"
 archlist="i386 x86_64"
 baselist="os updates centosplus extras"
 local=/var/ftp/pub/yum/CentOS
@@ -32,7 +32,6 @@ fi
   do
   if [ -d $local/$ver/$arch/$base ]; then
         echo "Getting CentOS files for $ver/$arch/$base"
-	/usr/local/bin/poststatus Getting CentOS files for $ver/$arch/$base
   else
         mkdir $local/$ver/$arch/$base
   fi
