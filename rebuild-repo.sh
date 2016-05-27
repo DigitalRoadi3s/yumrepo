@@ -2,7 +2,7 @@
 # Created 2009 - Eric L. Santelices
 # Updated 2/25/2013 - Eric L. Santelices
 
-verlist="5 6 7"
+verlist="6 7"
 archlist="i386 x86_64"
 baselist="os updates centosplus extras"
 local=/var/ftp/pub/yum/local
